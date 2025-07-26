@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>St. Joseph's College</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white shadow-md">
+<nav class="container mx-auto px-6 py-3">
+<div class="flex items-center justify-between">
+<div class="text-2xl font-bold text-blue-800">
+                    St. Joseph's College
+                </div>
+<div class="hidden md:flex items-center space-x-1">
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Home</a>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">About Us</a>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Editorial Board</a>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Author Guidelines</a>
+<div class="relative group">
+<button class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300 flex items-center">
+                            Journal Issues <span class="material-icons ml-1">arrow_drop_down</span>
+</button>
+<div class="absolute z-10 hidden bg-white rounded-md shadow-lg group-hover:block">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">Issue 1</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">Issue 2</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">Issue 3</a>
+</div>
+</div>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Photo Gallery</a>
+<div class="relative group">
+<button class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300 flex items-center">
+                            Login <span class="material-icons ml-1">arrow_drop_down</span>
+</button>
+<div class="absolute z-10 hidden bg-white rounded-md shadow-lg group-hover:block">
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">Admin Login</a>
+<a class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" href="#">User Login</a>
+</div>
+</div>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Enquiry</a>
+<a class="py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md transition duration-300" href="#">Contact Us</a>
+</div>
+<div class="md:hidden">
+<button class="text-gray-700 focus:outline-none" id="menu-btn">
+<span class="material-icons text-3xl">menu</span>
+</button>
+</div>
+</div>
+<div class="hidden md:hidden mt-3" id="mobile-menu">
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Home</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">About Us</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Editorial Board</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Author Guidelines</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Journal Issues</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Photo Gallery</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Login</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Enquiry</a>
+<a class="block py-2 px-4 text-gray-700 hover:bg-blue-800 hover:text-white rounded-md" href="#">Contact Us</a>
+</div>
+</nav>
+</header>
+<main class="container mx-auto px-6 py-12">
+<section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+<h1 class="text-4xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">St. Joseph's College</h1>
+<div class="flex flex-col md:flex-row items-start gap-8">
+<div class="md:w-1/3 flex justify-center">
+<img alt="Statue of Saint Joseph" class="rounded-lg shadow-md max-w-full h-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKrJQASkapYB0zaFT-MZn_vvlnR2fCH-inPGMhKY-R86Af95c-yYXWKoiTy7SCBX7w8YTnPm9lEGztkhNxoEfJUtuoHI8klx_uzL2M8rENPg_pHbOMQBPQ9ImxKwbyF-qkz676HAhM4pyJO_0eIpKjRlO3Vh2nWOGgK7gK_qFK_2NKsdrO7ZPc2F6UDBCF0jJrFc126HsEqNMIrenJVJqRHJzsAvxHRxPzOmMSSgvRRMTIB5yc5S15OAHBe-Ro4UNu0ldp5in22T0"/>
+</div>
+<div class="md:w-2/3">
+<p class="text-gray-700 leading-relaxed text-justify">
+                        True to its noble ideal Pro Bono et Vero (for the Good and the True), St. Joseph’s College has always upheld and radiated Goodness and Truth in its endeavour to impart quality in higher education. This educational establishment has been instrumental in churning out thousands of truly educated persons, physically fit and intellectually well equipped. Thus, this College stands for what is best in education. The College blazon is a distinctive badge expressing its aim and ideal. It bears azure, with Tiruchirappalli Rock and College Church for distinctive features. The conspicuous Palm Tree in the middle is the Emblem of the East. It bears in fesse, a bow, and above it is the monogram of the Society of Jesus. Its crest is a royal crown and a lily issuant, both in honour of the college Patron, St. Joseph, the crown to signify that he was of David’s royal blood, and the lily to signify his spotless purity. Thus the whole in ordinary language would read: The College of St. Joseph conducted by the Members of the Society of Jesus at Tiruchirappalli in the East.
+                    </p>
+</div>
+</div>
+</section>
+<section class="bg-white p-8 rounded-lg shadow-lg mb-12">
+<h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">Department of Computer Science</h2>
+<p class="text-gray-700 leading-relaxed text-justify">
+                The Department of Computer Science was started in the year 1983. The Department offers B.Sc. (Computer Science) from 1983, MCA from 1984, M.Phil. and Ph.D. programmes from 2002. St. Joseph’s College was the first Arts and Science College to offer MCA in India and first to produce the PhD in Computer Science in the Bharathidasan University. There are 11 aided and 14 unaided staff members. Among 17 PhD holders, 7 staff members are guiding research scholars for Ph.D, 4 staff members are qualified NET and 6 qualified SET. The faculty of the Department serve as members of inspection committee of the Bharathidasan University for approval of Computer Courses, members of staff selection committee of other colleges, members of organizing committee of various conferences of international and national level and members of editorial board of research journals. In 2005 and 2007 a national level conference was organized. In 2014 and 2016 International Conferences were held. The Department has produced 15 Ph.Ds. Seven minor research projects were completed, funded by UGC. To adhere to the motto of the Department "Professional Excellence", the Training and Placement Cell of the Department has helped to place 53 students in 2007, 2 in 2008, 9 in 2009, 23 in 2010 and 23 in 2011 in various MNCs. The companies like Asian Paints, Patni Computer Systems, Fulcrum Technologies, HCL, Infosys, Wipro Technologies, Satyam, TCS, Sutherland Global Services, Igate, Savvion, NetMagnus, Kumaran Systems and ISG Novasoft prefer to provide project cum placement to our students for their values and professional commitment.
+            </p>
+</section>
+<section class="bg-white p-8 rounded-lg shadow-lg">
+<h2 class="text-3xl font-bold text-blue-800 mb-6 border-b-2 border-blue-200 pb-2">Objectives</h2>
+<p class="text-gray-700 leading-relaxed text-justify">
+                To mould the students with Professional Excellence To impart the technologies with social and spiritual values in order to form the young men and women for others To strengthen the research and consultancy by bringing the more number of funded Research projects To increase the placement. Mollic can be signed with prominent organizations and interaction can be improved with Alumnalan.
+            </p>
+</section>
+</main>
+<script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

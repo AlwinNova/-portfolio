@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Techwin games</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .choice-btn {
+            font-size: 2rem;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            transition: all 0.3s;
+        }
+
+        .choice-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .result-box {
+            min-height: 150px;
+            border-radius: 10px;
+        }
+
+        .score-box {
+            font-size: 1.2rem;
+        }
+
+        .computer-choice,
+        .player-choice {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <h1 class="mb-4">Mudinja Win Aagu &#128513;</h1>
+
+                <!-- Game Area -->
+                <div class="card shadow mb-4 bg-info">
+                    <div class="card-body">
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <h3>Nee &#128512;</h3>
+                                <div class="player-choice mb-3">❔</div>
+                            </div>
+                            <div class="col-md-6">
+                                <h3>En Computer</h3>
+                                <div class="computer-choice mb-3">❔</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center mb-4">
+                            <button class="choice-btn btn btn-outline-primary rounded-circle"
+                                data-choice="rock">✊</button>
+                            <button class="choice-btn btn btn-outline-primary rounded-circle"
+                                data-choice="paper">✋</button>
+                            <button class="choice-btn btn btn-outline-primary rounded-circle"
+                                data-choice="scissors">✌️</button>
+                        </div>
+
+                        <div class="result-box p-3 mb-3 bg-white border">
+                            <p class="result-text">Edhachum Choose Pannunga Bhaiya!</p>
+                        </div>
+
+                        <div class="score-box p-3 bg-light border rounded">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <p>Wins: <span class="wins">0</span></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p>Losses: <span class="losses">0</span></p>
+                                </div>
+                                <div class="col-md-4">
+                                    <p>Draws: <span class="draws">0</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn btn-danger reset-btn">Reset Kudu Brow </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Game elements
+            const choiceButtons = document.querySelectorAll('.choice-btn');
+            const playerChoiceDisplay = document.querySelector('.player-choice');
+            const computerChoiceDisplay = document.querySelector('.computer-choice');
+            const resultText = document.querySelector('.result-text');
+            const winsDisplay = document.querySelector('.wins');
+            const lossesDisplay = document.querySelector('.losses');
+            const drawsDisplay = document.querySelector('.draws');
+            const resetButton = document.querySelector('.reset-btn');
+
+            // Game state
+            let wins = 0;
+            let losses = 0;
+            let draws = 0;
+
+            // Emoji mappings
+            const emojis = {
+                rock: '✊',
+                paper: '✋',
+                scissors: '✌️'
+            };
+
+            // Event listeners for choice buttons
+            choiceButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const playerChoice = this.dataset.choice;
+                    playGame(playerChoice);
+                });
+            });
+
+            // Reset button
+            resetButton.addEventListener('click', resetGame);
+
+            // Main game function
+            function playGame(playerChoice) {
+                // Get computer's choice
+                const computerChoice = getComputerChoice();
+
+                // Update displays
+                playerChoiceDisplay.textContent = emojis[playerChoice];
+                computerChoiceDisplay.textContent = emojis[computerChoice];
+
+                // Determine winner
+                const result = determineWinner(playerChoice, computerChoice);
+
+                // Update result text
+                resultText.textContent = result.message;
+
+                // Update scores
+                if (result.outcome === 'win') {
+                    wins++;
+                    winsDisplay.textContent = wins;
+                    resultText.innerHTML += ' <span class="text-success">You win!</span>';
+                } else if (result.outcome === 'lose') {
+                    losses++;
+                    lossesDisplay.textContent = losses;
+                    resultText.innerHTML += ' <span class="text-danger">You lose!</span>';
+                } else {
+                    draws++;
+                    drawsDisplay.textContent = draws;
+                    resultText.innerHTML += ' <span class="text-warning">It\'s a draw!</span>';
+                }
+            }
+
+            // Computer random choice
+            function getComputerChoice() {
+                const choices = ['rock', 'paper', 'scissors'];
+                const randomIndex = Math.floor(Math.random() * 3);
+                return choices[randomIndex];
+            }
+
+            // Determine winner logic
+            function determineWinner(playerChoice, computerChoice) {
+                if (playerChoice === computerChoice) {
+                    return {
+                        outcome: 'draw',
+                        message: `Both chose ${playerChoice}.`
+                    };
+                }
+
+                if (
+                    (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                    (playerChoice === 'paper' && computerChoice === 'rock') ||
+                    (playerChoice === 'scissors' && computerChoice === 'paper')
+                ) {
+                    return {
+                        outcome: 'win',
+                        message: `${capitalizeFirstLetter(playerChoice)} beats ${computerChoice}.`
+                    };
+                } else {
+                    return {
+                        outcome: 'lose',
+                        message: `${capitalizeFirstLetter(computerChoice)} beats ${playerChoice}.`
+                    };
+                }
+            }
+
+            // Helper function to capitalize first letter
+            function capitalizeFirstLetter(string) {
+                return string.charAt(0).toUpperCase() + string.slice(1);
+            }
+
+            // Reset game function
+            function resetGame() {
+                wins = 0;
+                losses = 0;
+                draws = 0;
+
+                winsDisplay.textContent = '0';
+                lossesDisplay.textContent = '0';
+                drawsDisplay.textContent = '0';
+
+                playerChoiceDisplay.textContent = '❔';
+                computerChoiceDisplay.textContent = '❔';
+
+                resultText.textContent = 'Edhachum Choose Pannunga Bhaiya!';
+            }
+        });
+    </script>
+</body>
+
+</html>
